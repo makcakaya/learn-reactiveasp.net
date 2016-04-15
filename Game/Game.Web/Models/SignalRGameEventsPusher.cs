@@ -3,11 +3,11 @@ using Microsoft.AspNet.SignalR;
 
 namespace Game.Web.Models
 {
-    public sealed class SignalRGameEventPusher : IGameEventsPusher
+    public sealed class SignalRGameEventsPusher : IGameEventsPusher
     {
         private static readonly IHubContext _gameHubContext;
 
-        static SignalRGameEventPusher()
+        static SignalRGameEventsPusher()
         {
             _gameHubContext = GlobalHost.ConnectionManager.GetHubContext<GameHub>();
         }

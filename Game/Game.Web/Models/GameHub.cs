@@ -1,4 +1,5 @@
-﻿using Game.ActorModel.Messages;
+﻿using Akka.Actor;
+using Game.ActorModel.Messages;
 using Microsoft.AspNet.SignalR;
 
 namespace Game.Web.Models

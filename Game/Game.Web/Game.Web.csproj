@@ -157,6 +157,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\GameActorSystem.cs" />
+    <Compile Include="Models\GameHub.cs" />
+    <Compile Include="Models\SignalRGameEventsPusher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
