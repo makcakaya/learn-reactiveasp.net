@@ -2,7 +2,7 @@
 {
     public sealed class AttackPlayerMessage
     {
-        public int PlayerName { get; private set; }
+        public string PlayerName { get; private set; }
 
         public AttackPlayerMessage(string playerName)
         {
