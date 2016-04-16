@@ -67,5 +67,27 @@
             // Set initial health
             self.changeHealth(health);
         }
+
+        var GameViewModel = function () {
+            var self = this;
+
+            // Joining game state
+            self.newPlayerName = ko.observable('');
+            self.isAlive = ko.observable(false);
+
+            // Current player
+            self.thisPlayer = ko.observable(new PlayerViewModel('', NaN));
+
+            // Other players
+            self.otherPlayers = ko.observableArray();
+
+            self.joinGame = function () {
+                gameHub.server.joinGame(self.newPlayerName());
+            }
+        }
+
+        // Instantiate VM and bind
+        var vm = new GameViewModel();
+        ko.applyBindings(vm);
     </script>
 }
