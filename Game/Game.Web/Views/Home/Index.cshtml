@@ -40,5 +40,32 @@
         }
 
         $.connection.hub.start();
+
+        // View model definition for player
+        var PlayerViewModel = function (playerName, health) {
+            var self = this;
+
+            // attack method is called to attack this player
+            self.attack = function () {
+                gameHub.server.attack(self.playerName());
+            }
+
+            // changeHealth method is called to set a new health for this player
+            self.changeHealth = function (newHealth) {
+                self.health(newHealth);
+
+                if (newHealth <= 0) {
+                    self.isAlive(false);
+                }
+            }
+
+            // Property definitions
+            self.playerName = ko.observable(playerName);
+            self.isAlive = ko.observable(true);
+            self.health = ko.observable(NaN);
+
+            // Set initial health
+            self.changeHealth(health);
+        }
     </script>
 }
